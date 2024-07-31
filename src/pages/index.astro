@@ -1,14 +1,23 @@
 ---
 import Layout from '../layouts/Layout.astro';
 import Badge from '../components/Badge.astro';
+import Card from '../components/Card.astro';
 
 ---
 
 <Layout title="Welcome to Astro.">
 	<main>
 		<section class="w-full lg:w-[740px] mx-auto py-44">
-		<h1 class="text-white font-bold text-5xl justify-center flex-row">Hi, I'm Nicolás Firpo <Badge >Disponible</Badge></h1>
-		<h2>Front-End Developer Exploring Back-End Technologies | Passionate About Design, Development, and Innovation </h2>
+		<div class="flex flex-row gap-4">
+			<div class="flex-col">
+				<h1 class="text-white font-bold text-5xl flex flex-row gap-x-4">Hi, I'm Nicolás Firpo <span class="flex justify-center items-center"><Badge >Disponible</Badge></span></h1>
+				
+				<h2>Front-End Developer Exploring Back-End Technologies | Passionate About Design, Development, and Innovation </h2>
+			</div>
+			<div>
+				<img src="" alt="Foto Nicolas Firpo">
+			</div>
+		</div>
 		</section>
 	</main>
 </Layout>
