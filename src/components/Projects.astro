@@ -1,35 +1,85 @@
 ---
+
 const PROJECTS = [
     {
         title: "Visit Dubai",
-        description: "This is a project",
+        description: "A visually appealing static website built using HTML and CSS, showcasing the beauty and attractions of Dubai. The site is semantically structured for accessibility and SEO, and is fully responsive for optimal viewing on mobile devices and tablets.",
         link: "https://github.com/niknef/TP-FINAL-MAQUETADO",
         img: "/images/dubai.webp",
-        alt: "Visit Dubai",
-        tags: ["HTML", "CSS"]
+        alt: "Screenshot of Visit Dubai project",
+        tags: ["HTML", "CSS", "Responsive Design", "Semantic HTML"],
     },
     {
         title: "Mundo Urbano E-Commerce",
-        description: "This is another project",
-        link: "https://example.com",
+        description: "A dynamic e-commerce platform developed primarily using JavaScript and the DOM for interactive features. The project showcases a user-friendly shopping experience with product listings, shopping cart functionality, and responsive design.",
+        link: "https://github.com/niknef/p1-final-dw2-2023-1-firpo-nicolas", 
         img: "/images/mundourbanoweb.webp",
-        alt: "Mundo Urbao E-Commerce",
-        tags: ["JS", "HTML", "CSS"]
-    }
+        alt: "Screenshot of Mundo Urbano E-Commerce website",
+        tags: ["JavaScript", "HTML", "CSS", "DOM Manipulation", "Responsive Design"]
+    },
+    {
+    title: "Cinematch",
+    description: "Cinematch is a Progressive Web App (PWA) designed for movie enthusiasts. The app is built with HTML, CSS, and JavaScript, featuring a functional login system and API integration for fetching movie data. Users can save movies to watch later, mark movies as watched, and add favorites. The app is fully installable on devices, providing a seamless and offline-friendly user experience.",
+    link: "https://github.com/niknef/pwa-parcial-2-dwm3av-firpo-nicolas", 
+    img: "/images/cinematch.webp",
+    alt: "Screenshot of Cinematch PWA",
+    tags: ["PWA", "HTML", "CSS", "JavaScript", "API Integration"]
+    },
+    {
+    title: "Puro Espresso",
+    description: "Puro Espresso is a subscription-based website offering specialty coffee deliveries every month. Built with HTML, CSS, JavaScript, Vue, and Bootstrap, the site provides a user-friendly interface for selecting subscription plans, exploring different coffee blends, and managing accounts. The site utilizes modern front-end technologies to ensure a responsive and engaging user experience.",
+    link: "https://github.com/niknef/pureEspresso-VueJS", 
+    img: "/images/puroespresso.webp",
+    alt: "Screenshot of Puro Espresso website",
+    tags: ["HTML", "CSS", "JavaScript", "Vue", "Bootstrap", "Subscription Service"]
+    }, 
+    {
+    title: "Mundo Urbano App",
+    description: "A mobile app design concept for the Mundo Urbano e-commerce platform. Created primarily with Illustrator and prototyped in Figma, this project showcases a user-friendly interface for browsing products, managing accounts, and shopping on the go.",
+    link: "https://www.figma.com/design/gRlpEFkwDUz4DuOncEaIZC/flujos-de-tarea?node-id=0-1&t=EktbHpQVn7X3AsM2-0", 
+    img: "/images/mundomobile.webp",
+    alt: "Mundo Urbano App Design",
+    tags: ["Illustrator", "Figma", "Mobile App Design", "E-commerce"]
+    },
+    {
+    title: "Mypass",
+    description: "A redesign project for a ticket sales app. The work focused on improving user experience and visual aesthetics, using Figma for prototyping. Although the project was not completed due to lack of follow-up from the client, it demonstrates proficiency in app design and UI/UX principles.",
+    link: "https://www.figma.com/design/jGP39YFMpY57AubYbvLfpp/App-Mobile-(Community)?node-id=2-0&t=obO9eEcCkjRja5ze-0", 
+    img: "/images/mypass.webp",
+    alt: "Mypass App Design",
+    tags: ["Figma", "Mobile App Design", "UI/UX", "Ticket Sales"]
+    },
+    {
+    title: "Razer Mouse Landing Page",
+    description: "A visually striking landing page design for a Razer mouse, created as part of a coursework project. The design showcases the mouse's features and aesthetics, leveraging a wide range of Photoshop tools and techniques to produce a polished and engaging user experience.",
+    link: "https://www.figma.com/board/5TNrFuMd1kvs1KcDVsMaDi/landing-page-Razer?t=EktbHpQVn7X3AsM2-0", 
+    img: "/images/razer.webp",
+    alt: "Razer Mouse Landing Page Design",
+    tags: ["Photoshop", "Landing Page Design", "Graphic Design"]
+    },
+    {
+    title: "Aura",
+    description: "Aura is a health insurance app designed for young adults, focused on delivering tailored healthcare services. The project included comprehensive market research, a value proposition development, and a user persona analysis to ensure alignment with the target audience's needs. The app's UI/UX design was crafted in Illustrator, prototyped in Figma, and tested with several users for feedback and improvements.",
+    link: "https://www.figma.com/design/GORmWJKm9z6b8DG2XEvWGB/aura?node-id=0-1&t=D92Srz0IR342g7Hk-0", 
+    img: "/images/aura.webp",
+    alt: "Aura App Design",
+    tags: ["Illustrator", "Figma", "UX/UI Design", "Market Research", "Health Insurance"]
+}
 ]
 ---
 <div class="grid grid-cols-1 md:grid-cols-2 gap-4 md:justify-items-center">
 {
     PROJECTS.map(({title, description, tags, img, alt, link }) => (
-            <a href={link} target="_blank" rel="noopener" class="group relative block bg-black rounded md:w-80 lg:w-11/12">
-                <img src={img} alt={alt} class="absolute inset-0 h-full w-full object-cover opacity-80 transition-opacity group-hover:opacity-30 rounded">
+            <a href={link} target="_blank" rel="noopener" class="group relative block bg-black rounded md:w-full ">
+                <img src={img} alt={alt} class="absolute inset-0 h-full w-full object-cover opacity-90 transition-opacity group-hover:opacity-30 rounded">
                 <div class="relative p-4">
-                    <h3 class="text-xl font-medium uppercase tracking-widest text-pink-600">{title}</h3>
-                    
+                    <div class="flex justify-center bg-pink-500/40 rounded mt-1">
+                        <h3 class="text-xl font-light tracking-widest text-white">{title}</h3>
+                    </div>
                     <div class="mt-32 sm:mt-48 lg:mt-64">
                     <div class="translate-y-8 transform opacity-0 transition-all group-hover:translate-y-0 group-hover:opacity-100 rounded"
       >
-                        <p class="text-sm text-white">
+                        <p class="text-white">
                         {description}
                         </p>
                         <ul class="flex gap-4 mt-4 flex-wrap justify-start">
