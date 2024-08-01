@@ -13,35 +13,39 @@ import CodeIcon from '../components/icons/Code.astro';
 ---
 
 <Layout title="Portfolio Nicolás Firpo - Web Developer & Programmer" description="Hire Nicolás Firpo for web and mobile app development. Experienced web developer with a passion for creating functional and responsive digital experiences.">
-	<main class="px-2">
-		<SectionContainer class="py-36 pb-36">
+	<main class="px-4 md:px-2">
+		
+		<SectionContainer class="py-36 pb-36 ">
 		<div class="flex flex-col md:flex-row gap-2 md:gap-4 justify-center items-center mx-4">
 			<div class="flex-col md:max-w-3xl text-center md:text-start">
 				<h1 class="text-white font-bold text-3xl md:text-4xl lg:text-5xl flex flex-col md:flex-row gap-x-2 lg:gap-x-4 pb-5">Hi, I'm Nicolás Firpo <a href="https://www.linkedin.com/in/nicolasfirpo/" target="_blank" rel="noopener" class="flex justify-center items-center"><Badge >Available for Work</Badge></a></h1>
 				
 				<h2 class="text-xl opacity-80 text-wrap-pretty">Front-End Developer Exploring Back-End Technologies | Passionate About Design, Development, and Innovation </h2>
+				<div>
+					<ul class="flex gap-4 mt-4 flex-wrap justify-center md:justify-start">
+						<li>
+							<SocialPill href="https://www.linkedin.com/in/nicolasfirpo/"><LinkedinIcon class="size-4 md:size-6" />
+							LinkedIn
+							</SocialPill>
+					
+						</li>
+						<li>
+							<SocialPill href="https://github.com/niknef"><GithubIcon class="size-4 md:size-6" />Git Hub</a></SocialPill>
+							
+						</li>
+						<li>
+							<SocialPill href="https://github.com/niknef"><MailIcon class="size-4 md:size-6" />Nicolasfirpodev@gmail.com</a></SocialPill>
+							
+						</li>
+					</ul>
+				</div>
 			</div>
-			<div>
-				<img src="" alt="Foto Nicolas Firpo">
+			<div class="flex justify-center my-6 md:my-0">
+				<img src="/images/profilenicolasfirpo.jpg" alt="Foto Nicolas Firpo" class="rounded-full size-1/2 md:size-fit lg:size-auto">
 			</div>
 		</div>
 
-		<ul class="flex gap-4 mt-4 ml-4 flex-wrap justify-center md:justify-start">
-			<li>
-				<SocialPill href="https://www.linkedin.com/in/nicolasfirpo/"><LinkedinIcon class="size-4 md:size-6" />
-				LinkedIn
-				</SocialPill>
 		
-			</li>
-			<li>
-				<SocialPill href="https://github.com/niknef"><GithubIcon class="size-4 md:size-6" />Git Hub</a></SocialPill>
-				
-			</li>
-			<li>
-				<SocialPill href="https://github.com/niknef"><MailIcon class="size-4 md:size-6" />Nicolasfirpodev@gmail.com</a></SocialPill>
-				
-			</li>
-		</ul>
 		</SectionContainer>
 		<SectionContainer id="proyects" class="lg:w-3/4 justify-center">
 			<h2 class="text-white text-2xl font-semibold text-center mb-6 flex gap-x-3 items-center"><CodeIcon class="size-7" />Projects</h2>

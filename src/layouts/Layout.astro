@@ -22,7 +22,7 @@ const { description, title } = Astro.props;
 		<title>{title}</title>
 	</head>
 	<body>
-		<div class="relative h-full w-full bg-neutral-900"><div class="absolute inset-0 bg-fuchsia-400 bg-[size:20px_20px] opacity-20 blur-[100px]"></div></div>
+		<div class="absolute top-0 z-[-2] h-screen w-screen bg-neutral-950 bg-[radial-gradient(ellipse_50%_70%_at_50%_-20%,rgba(235,12,192,0.2),rgba(255,255,255,0))]"></div>
 		<Header />
 		<slot />
 		<Footer />

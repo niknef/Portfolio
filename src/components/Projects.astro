@@ -1,30 +1,30 @@
 ---
 const PROJECTS = [
     {
-        title: "Project 1",
+        title: "Visit Dubai",
         description: "This is a project",
-        link: "https://example.com",
-        img: "/images/chaquetastatic1.jpg",
-        alt: "Project 1",
-        tags: ["tag1", "tag2"]
+        link: "https://github.com/niknef/TP-FINAL-MAQUETADO",
+        img: "/images/dubai.webp",
+        alt: "Visit Dubai",
+        tags: ["HTML", "CSS"]
     },
     {
-        title: "Project 2",
+        title: "Mundo Urbano E-Commerce",
         description: "This is another project",
         link: "https://example.com",
-        img: "/images/trip-premium.jpg",
-        alt: "Project 2",
-        tags: ["tag1", "tag2"]
+        img: "/images/mundourbanoweb.webp",
+        alt: "Mundo Urbao E-Commerce",
+        tags: ["JS", "HTML", "CSS"]
     }
 ]
 ---
 <div class="grid grid-cols-1 md:grid-cols-2 gap-4 md:justify-items-center">
 {
     PROJECTS.map(({title, description, tags, img, alt, link }) => (
-            <a href="#" class="group relative block bg-black rounded md:w-80 lg:w-96">
-                <img src={img} alt={alt} class="absolute inset-0 h-full w-full object-cover opacity-75 transition-opacity group-hover:opacity-50 rounded">
-                <div class="relative p-4 sm:p-6 lg:p-8">
-                    <h3 class="text-sm font-medium uppercase tracking-widest text-pink-500">{title}</h3>
+            <a href={link} target="_blank" rel="noopener" class="group relative block bg-black rounded md:w-80 lg:w-11/12">
+                <img src={img} alt={alt} class="absolute inset-0 h-full w-full object-cover opacity-80 transition-opacity group-hover:opacity-30 rounded">
+                <div class="relative p-4">
+                    <h3 class="text-xl font-medium uppercase tracking-widest text-pink-600">{title}</h3>
                     
                     <div class="mt-32 sm:mt-48 lg:mt-64">
                     <div class="translate-y-8 transform opacity-0 transition-all group-hover:translate-y-0 group-hover:opacity-100 rounded"
