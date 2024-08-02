@@ -4,6 +4,7 @@ import Badge from '../components/Badge.astro';
 import SectionContainer from '../components/SectionContainer.astro';
 import Projects from '../components/Projects.astro';
 import About from '../components/About.astro';
+import Contact from '../components/Contact.astro';
 import Skills from '../components/Skills.astro';
 import LinkedinIcon from '../components/icons/Linkedin.astro';
 import GithubIcon from '../components/icons/Github.astro';
@@ -30,17 +31,17 @@ import CodeIcon from '../components/icons/Code.astro';
 					
 						<ul class="flex gap-4 mt-4 flex-wrap justify-center md:justify-start">
 							<li>
-								<SocialPill href="https://www.linkedin.com/in/nicolasfirpo/"><LinkedinIcon class="size-4 md:size-6" />
+								<SocialPill href="https://www.linkedin.com/in/nicolasfirpo/" target="_blank" rel="noopener"><LinkedinIcon class="size-4 md:size-6" />
 								LinkedIn
 								</SocialPill>
 						
 							</li>
 							<li>
-								<SocialPill href="https://github.com/niknef"><GithubIcon class="size-4 md:size-6" />Git Hub</a></SocialPill>
+								<SocialPill href="https://github.com/niknef" target="_blank" rel="noopener"><GithubIcon class="size-4 md:size-6" />Git Hub</a></SocialPill>
 								
 							</li>
 							<li>
-								<SocialPill href="mailto:nicolasfirpodev@gmail.com"><MailIcon class="size-4 md:size-6" />Nicolasfirpodev@gmail.com</a></SocialPill>
+								<SocialPill href="mailto:nicolasfirpodev@gmail.com" target="_blank" rel="noopener"><MailIcon class="size-4 md:size-6" />Nicolasfirpodev@gmail.com</a></SocialPill>
 								
 							</li>
 						</ul>
@@ -66,6 +67,11 @@ import CodeIcon from '../components/icons/Code.astro';
 		<SectionContainer id="proyects" class="lg:w-3/4 justify-center">
 			<h2 class="text-white text-3xl font-semibold text-center mb-6 flex gap-x-3 items-center"><CodeIcon class="size-10" />Projects</h2>
 				<Projects />
+			
+		</SectionContainer>
+		<SectionContainer id="contact" class="lg:w-3/4 justify-center">
+			
+				<Contact />
 			
 		</SectionContainer>
 	</main>
