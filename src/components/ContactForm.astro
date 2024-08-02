@@ -1,44 +1,60 @@
 ---
 import MailIcon from './icons/Mail.astro';
 import { isValidEmail } from '../services/contactValidate.ts';
+import { sendEmail } from '../services/sendEmail.ts';
 
 const errors = { email: "", message: "" };
 
 if (Astro.request.method === "POST") {
   try {
+    const contentType = Astro.request.headers.get("content-type");
+    if (contentType !== "application/x-www-form-urlencoded" && !contentType?.startsWith("multipart/form-data")) {
+      throw new Error("Invalid content type");
+    }
+
     const data = await Astro.request.formData();
-    const email = data.get("email");
-    const message = data.get("message");
-    
-    if (typeof message !== "string" || message.length < 1) {
+    const emailValue = data.get("email");
+    const messageValue = data.get("message");
+
+    const email = emailValue ? String(emailValue) : "";
+    const message = messageValue ? String(messageValue) : "";
+
+    if (!isValidEmail(email)) {
+      errors.email += "Email is not valid. ";
+    }
+    if (message.length < 1) {
       errors.message += "Please enter a message. ";
     }
-    if (typeof email !== "string" || !isValidEmail(email)) {
-      errors.email += "Email is not valid. ";
-    } 
+
+    if (!errors.email && !errors.message) {
+      await sendEmail({
+        to: 'nicolasfirpodev@gmail.com',
+        from: 'Portfolio <onboarding@resend.dev>',
+        subject: 'New Contact Form Message',
+        html: `<p>La persona: ${email} </p><p>Le esta enviando el siguiente mensaje:</p><p>${message}</p>`,
+      });
+    }
   } catch (error) {
     if (error instanceof Error) {
       console.error(error.message);
     }
   }
 }
-
 ---
-<form class="space-y-8" method="POST">
-    
-    <div>
-        <label for="email" class="block mb-2 text-md font-light text-white/80">Your email</label>
-        <input type="email" name="email" id="email" class="shadow-sm bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-primary-500 focus:border-primary-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-primary-500 dark:focus:border-primary-500 dark:shadow-sm-light" placeholder="name@example.com" required>
-        {errors.email && <p class="text-red-500">{errors.email}</p>}
-    </div>
-    <div class="sm:col-span-2">
-        <label for="message" class="block mb-2 text-md font-light text-white/80">Your message</label>
-        <textarea id="message" name="message" rows="6" class="block p-2.5 w-full text-sm text-gray-900 bg-gray-50 rounded-lg shadow-sm border border-gray-300 focus:ring-primary-500 focus:border-primary-500 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-primary-500 dark:focus:border-primary-500" placeholder="Leave a comment..." required></textarea>
-        {errors.message && <p class="text-red-500">{errors.message}</p>}
-    </div>
-   
-    <div class="flex justify-center">
-    <button type="submit" class="flex flex-row justify-center items-center aling-center gap-2 text-white bg-gradient-to-r from-purple-500 to-pink-500 hover:bg-gradient-to-l focus:ring-4 focus:outline-none focus:ring-purple-200 dark:focus:ring-purple-800 font-medium rounded-lg text-sm px-5 py-2.5 text-center me-2 mb-2"><MailIcon class="size-4"/>Send message</button>
-</div>
 
+<form class="space-y-8" method="POST">
+  <div>
+    <label for="email" class="block mb-2 text-md font-light text-white/80">Your email</label>
+    <input type="email" name="email" id="email" class="shadow-sm bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-primary-500 focus:border-primary-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-primary-500 dark:focus:border-primary-500 dark:shadow-sm-light" placeholder="name@example.com" required>
+    {errors.email && <p class="text-red-500">{errors.email}</p>}
+  </div>
+  <div class="sm:col-span-2">
+    <label for="message" class="block mb-2 text-md font-light text-white/80">Your message</label>
+    <textarea id="message" name="message" rows="6" class="block p-2.5 w-full text-sm text-gray-900 bg-gray-50 rounded-lg shadow-sm border border-gray-300 focus:ring-primary-500 focus:border-primary-500 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-primary-500 dark:focus:border-primary-500" placeholder="Leave a comment..." required></textarea>
+    {errors.message && <p class="text-red-500">{errors.message}</p>}
+  </div>
+
+  <div class="flex justify-center">
+    <button type="submit" class="flex flex-row justify-center items-center aling-center gap-2 text-white bg-gradient-to-r from-purple-500 to-pink-500 hover:bg-gradient-to-l focus:ring-4 focus:outline-none focus:ring-purple-200 dark:focus:ring-purple-800 font-medium rounded-lg text-sm px-5 py-2.5 text-center me-2 mb-2"><MailIcon class="size-4"/>Send message</button>
+  </div>
 </form>
