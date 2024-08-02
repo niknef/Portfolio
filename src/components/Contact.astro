@@ -1,19 +1,14 @@
 ---
 import MailIcon from './icons/Mail.astro';
+import ContactForm from './ContactForm.astro';
 ---
-
-<div class="flex flex-row justify-around items-center">
-    <div class="flex flex-col">
-        <h2 class="bg-gradient-to-r from-purple-300 via-purple-600 to-blue-600 bg-clip-text text-3xl font-extrabold text-transparent sm:text-5xl">Connect with me</h2>
-        <p class="text-xl opacity-80 text-wrap-pretty mt-4"> Let’s create something amazing together!</p>
-    </div>
-    <div class="flex flex-wrap justify-center gap-4">
-        <a
-          class="flex justify-center items-center gap-2 h-12 rounded border border-purple-600 bg-purple-600 px-6 py-3 text-sm font-medium text-white hover:bg-transparent hover:text-white focus:outline-none focus:ring active:text-opacity-75 sm:w-auto shadow-md shadow-purple-500/50"
-          href="mailto:nicolasfirpodev@gmail.com" target="_blank" rel="noopener"
-        >
-            <MailIcon class="size-4 " />
-          Contact Me
-        </a>
-      </div>
-</div>
+<section class="w-full bg-purple-500/15 mt-36">
+  
+  <div class="py-8 lg:py-16 px-4 mx-auto max-w-screen-md">
+      <h2 class="mb-4 text-4xl tracking-tight font-extrabold text-center bg-gradient-to-r from-purple-300 via-purple-600 to-blue-600 bg-clip-text text-transparent">Connect with me</h2>
+      <p class="mb-8 lg:mb-16 font-light text-center text-white sm:text-xl">I'm always open to new opportunities and connections! Whether you're interested in collaborating on a project, have a question, or just want to say hello, feel free to reach out. <span class="text-purple-500/80">Let's connect and create something great together!</span></p>
+      
+      <ContactForm />
+      
+  </div>
+</section>
