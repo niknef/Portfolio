@@ -1,11 +1,48 @@
 <header class="flex justify-center items-center py-3 w-full xl:w-[1120px] mx-auto mt-6">
-    
     <nav>
         <ul class="flex flex-row gap-x-10 opacity-80">
-            <li class="hover:text-purple-500"><a href="/">About me</a></li>
-            <li class="hover:text-purple-500"><a href="#skills">Skills</a></li>
-            <li class="hover:text-purple-500"><a href="#proyects">Proyects</a></li>
-            <li class="hover:text-purple-500"><a href="#contact">Contact</a></li>
+            <li class="hover:text-purple-500 relative">
+                <a href="/">About me</a>
+                <span class="underline"></span>
+            </li>
+            <li class="hover:text-purple-500 relative">
+                <a href="#skills">Skills</a>
+                <span class="underline"></span>
+            </li>
+            <li class="hover:text-purple-500 relative">
+                <a href="#proyects">Proyects</a>
+                <span class="underline"></span>
+            </li>
+            <li class="hover:text-purple-500 relative">
+                <a href="#contact">Contact</a>
+                <span class="underline"></span>
+            </li>
         </ul>
     </nav>
 </header>
+
+<style>
+    nav ul li {
+        position: relative;
+        display: inline-block;
+    }
+
+    nav ul li a {
+        position: relative;
+        text-decoration: none;
+    }
+
+    .underline {
+        position: absolute;
+        bottom: -3px;
+        left: 0;
+        width: 0%;
+        height: 2px;
+        background-color: #a855f7;
+        transition: width 0.3s ease-in-out;
+    }
+
+    nav ul li:hover .underline {
+        width: 100%;
+    }
+</style>
